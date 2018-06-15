@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 sed -i '/2222222222/a\3333333333' test.txt #匹配行后面添加内容
 sed -i '/2222222222/i\3333333333' test.txt #匹配行前面添加内容
@@ -19,4 +18,13 @@ netstat -tlnp|grep 80 #查看端口号占用情况。
 sort a.txt | uniq -d
 #其中， uniq -d是输出duplicate了的行， 也就是重复的行。 要注意， 这是建立在sort后的基础之上的。
 
+
+#用grep -c来统计匹配的行数
+#grep -c 的作用类似grep | wc -l，不同的是，如果是查找多个文件，grep -c会统计每个文件匹配的行数，每行一个文件的列出来，而wc -l 则列出总的统计数字。
+#另外grep -c 要比 grep | wc -l快一点。 
+ 
+grep -c night restart.07014
+#返回2
+#没有
+#返回0
 
