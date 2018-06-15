@@ -23,7 +23,7 @@ awk 'BEGIN { print "Name    RATE    HOURS";print ""} {print $0}' emp.data
 #这个程序使用一个变量 emp 来统计工作超过15个小时的员工的数目：:
 awk '$3 > 15 { emp = emp + 1 } {print $0} END { print emp, "employees worked more than 15 hours" } END { print NR, "employees" } ' emp.data
 
-#为计算员工的数目，我们可以使用内置变量 NR ，它保存着到目前位置读取的行数；在所有输入的结尾它的值就是所读的所有行数。
+ awk -F ',' '!a[$1]++' feige.csv > xx.csv#为计算员工的数目，我们可以使用内置变量 NR ，它保存着到目前位置读取的行数；在所有输入的结尾它的值就是所读的所有行数。
 #如下是一个使用 NR 来计算薪酬均值的程序：:
 awk '{ pay = pay + $2 * $3 }
 END { print NR, "employees"
@@ -67,8 +67,8 @@ awk '{ for (i = 1; i <= $3; i = i + 1)
     printf("\t%.2f\n", $1 * (1 + $2) ^ i)
 }' emp.data
 
-
-
+#依据第一个域为准，删除部分相同的行。
+ awk -F ',' '!a[$1]++' feige.csv > test.csv
 
 
 
