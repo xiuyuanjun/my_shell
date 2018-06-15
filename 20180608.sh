@@ -15,4 +15,8 @@ sed 's/redis-sentinel[0-9]\{4\}/zhaoxueqing/g' docker-compose.yml #sed命令中�
 
 netstat -tlnp|grep 80 #查看端口号占用情况。
 
+#如何判断文件是否有重复的行？------ sort和uniq搞起
+sort a.txt | uniq -d
+#其中， uniq -d是输出duplicate了的行， 也就是重复的行。 要注意， 这是建立在sort后的基础之上的。
+
 
