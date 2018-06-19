@@ -234,4 +234,6 @@ awk 'BEGIN{a["1"] = 3; delete a;a=3;print a}'  #即使你已经使用了delete�
 #<4> 数组的长度：
 #length(array)
 
+#awk之if语句的使用
+awk  -F","  '{ if($4=="江苏"){print $1} else {print  $0} } '  test.txt
 

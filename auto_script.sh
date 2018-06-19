@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+/usr/bin/date > /tmp/clear_log_run_stat.txt;if [ $(df | grep '/home' | awk '{print $5}' | awk -F '%' '{print $1}') -gt 95 ]; then cd /home/eums_log/gateway; find . -mtime +3 -name "*.txt.*-*-*" | xargs rm -f; fi
+
+sql="hive -e  \"insert into zx_already_send_number select dest_number,province,city,'9999','`/usr/bin/date \"+%Y-%m-%d\"`' from sms_mt where scan_start_time >= '`/usr/bin/date -d \"1 days ago\" \"+%Y-%m-%d\"`' and scan_start_time < '`/usr/bin/date \"+%Y-%m-%d\"`' and app_id in (548,2448,1526);\"";eval ${sql};if [ $? -eq 0 ];then echo ${sql} >> /tmp/9999_auto_insert_zx_already_send_number_script.log;while [ $(cat /tmp/9999_auto_insert_zx_already_send_number_script.log | wc -l) -gt 100 ];do /usr/bin/sed -i '1d' /tmp/9999_auto_insert_zx_already_send_number_script.log;done;fi
