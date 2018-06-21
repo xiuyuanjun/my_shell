@@ -237,3 +237,8 @@ awk 'BEGIN{a["1"] = 3; delete a;a=3;print a}'  #即使你已经使用了delete�
 #awk之if语句的使用
 awk  -F","  '{ if($4=="江苏"){print $1} else {print  $0} } '  test.txt
 
+#打印行号
+awk '{print NR}' filename;
+
+#通过awk删除匹配列的某一行#如下所示，删除第九列等于"普通"的行。
+awk -F ',' '$9 != "普通" {print $0}' zhaoxueqing02.csv  > zhaoxueqing.csv
