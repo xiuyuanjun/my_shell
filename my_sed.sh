@@ -17,3 +17,8 @@ sed -n 'xp' filename
 #显示文件X行到Y行的内容
 sed -n 'x,yp' filename
 
+#这个是删除第一行到第n行
+sed -i '1,nd' filename
+
+#要删除第 3 到最后一行
+sed -i '3,$d' filename
