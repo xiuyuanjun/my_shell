@@ -22,3 +22,11 @@ sed -i '1,nd' filename
 
 #要删除第 3 到最后一行
 sed -i '3,$d' filename
+
+#在每一行的开头添加一列
+sed -i 's/^/广东\t/g' guangdong.csv
+
+#在每一行的末尾添加一列
+sed -i 's/$/\t广东/g' guangdong.csv
+
+

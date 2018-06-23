@@ -12,7 +12,9 @@ sed -i '/home\/redis\/redis_/a\999999' docker-compose.yml;sed -i 's/999999/     
 
 sed 's/redis-sentinel[0-9]\{4\}/zhaoxueqing/g' docker-compose.yml #sed命令中间使用正则表达式进行匹配替换。
 
-netstat -tlnp|grep 80 #查看端口号占用情况。
+#查看端口号占用情况。
+netstat -tlnp|grep 80
+lsof -i:端口号
 
 #如何判断文件是否有重复的行？------ sort和uniq搞起
 sort a.txt | uniq -d
