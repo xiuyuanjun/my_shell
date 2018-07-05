@@ -1,7 +1,10 @@
+
 #!/usr/bin/env bash
 
 #删除第一行
 sed -i '1d' filename
+#在第一行添加一行
+sed -i '1i\账户名,提交时间,号码,状态报告,状态报告时间,内容' *.csv
 #删除第n行
 sed -i 'nd' filename
 #删除最后一行
