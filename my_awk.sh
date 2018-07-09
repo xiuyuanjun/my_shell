@@ -239,6 +239,9 @@ awk  -F","  '{ if($4=="江苏"){print $1} else {print  $0} } '  test.txt
 
 #打印行号
 awk '{print NR}' filename;
+awk 'NR > 100000 && NR <= 200000 {print $0}' 20180625_ali_188w.txt > /20180625_ali_10w_01.txt;
 
 #通过awk删除匹配列的某一行#如下所示，删除第九列等于"普通"的行。
 awk -F ',' '$9 != "普通" {print $0}' zhaoxueqing02.csv  > zhaoxueqing.csv
+
+

@@ -40,3 +40,6 @@ grep -c night restart.07014
 #没有
 #返回0
 
+#找出a.txt文件有而b.txt文件中没有的放在c.txt文件中
+diff   a_u.txt  b_u.txt | grep /<  | awk ' $1 = " " ' > c.txt
+
