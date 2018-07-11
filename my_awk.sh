@@ -276,3 +276,8 @@ awk '!a[$2]++' urrfile
 #  后加: 先使用变量的值，再自加。
 
 #   !a[$0]++ 对这个表达式的求值，它的值与 !a[$0] 相同(先使用变量a[$0]的值)，但对表达式求值后 a[$0]会自加。
+
+#awk 计算数据的和和平均值
+#最右边的数值表示数据。计算一下数据的和。 
+cat /tmp/hoge.data | awk '{ sum += $7 } END { print sum }'
+cat /tmp/hoge.data | awk '{ sum += $7; } END { print "sum = " sum; print "average = " sum/NR }'
