@@ -57,4 +57,4 @@
     #解压：
     unzip filename.zip
     #压缩：
-    zip filename.zip dirname
+    zip -r -q filename.zip dirname
