@@ -281,3 +281,7 @@ awk '!a[$2]++' urrfile
 #最右边的数值表示数据。计算一下数据的和。 
 cat /tmp/hoge.data | awk '{ sum += $7 } END { print sum }'
 cat /tmp/hoge.data | awk '{ sum += $7; } END { print "sum = " sum; print "average = " sum/NR }'
+
+#awk 指定多个分隔符
+awk -F"[|%]" '{}'  #这种形式指定的分隔符是或的关系，即以“|”或“%”为分隔符； 
+awk -F"[|][%]" '{}' #这种形式指定的分隔符是合并的关系，即以“|%”作为一个字符为分隔符。
