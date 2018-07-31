@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 
 #删除第一行
@@ -31,5 +30,10 @@ sed -i 's/^/广东\t/g' guangdong.csv
 
 #在每一行的末尾添加一列
 sed -i 's/$/\t广东/g' guangdong.csv
+
+sed 替换命令可以
+#用其它字符当分隔符的，
+#不是必须要用/ 
+sed 's#/a#/b#' 将'/a'替换为'/b' 
 
 
