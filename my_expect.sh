@@ -1,7 +1,7 @@
 #!/usr/bin/expect
 set timeout 100
-set password "huawei"
-spawn ssh root@10.175.101.154
+set password "passwd"
+spawn ssh username@ip
 expect "Password:"
 send "$password\n"
 interact
