@@ -285,3 +285,19 @@ cat /tmp/hoge.data | awk '{ sum += $7; } END { print "sum = " sum; print "averag
 #awk 指定多个分隔符
 awk -F"[|%]" '{}'  #这种形式指定的分隔符是或的关系，即以“|”或“%”为分隔符； 
 awk -F"[|][%]" '{}' #这种形式指定的分隔符是合并的关系，即以“|%”作为一个字符为分隔符。
+
+#awk 正则提取字符串类似于使用grep -E
+awk '/smith+ern/' testfile          #将包含字符 smit，后跟一个或多个 h 字符，并以字符 ern 结束的字符串的任何记录打印至标准输出。
+awk '/smith?/' testfile             #将包含字符 smit，后跟零个或一个 h 字符的实例的所有记录打印至标准输出。
+awk '/allen | alan /' testfile      #将包含字符串 allen 或 alan 的所有记录打印至标准输出。
+awk '/a(ll)?(nn)?e/' testfile       #将具有字符串 ae 或 alle 或 anne 或 allnne 的所有记录打印至标准输出。
+awk '/l{2}/' testfile               #指定如果正好有 m 个模式的具体值位于字符串中，则字符串匹配。
+awk '/t{2,}/' testfile              #指定如果至少 m 个模式的具体值在字符串中，则字符串匹配。
+awk '/er{1, 2}/' testfile           #指定如果 m 和 n 之间（包含的 m 和 n）个模式的具体值在字符串中（其中m <= n），则字符串匹配。
+awk '/sm[a-h]/' testfile            #将具有 sm 后跟以字母顺序从 a 到 h 排列的任何字符的所有记录打印至标准输出。
+awk '/sm[^a-h]/' testfile           #在 [ ]（方括号）和在指定字符串开头的 ^ (插入记号) 指明正则表达式与方括号内的任何字符不匹配。
+awk '$1 ~ /n/' testfile             #表示指定变量与正则表达式匹配（代字号）或不匹配（代字号、感叹号）的条件语句。
+awk '$2 ~ /^h/' testfile            #将把字符 h 作为第二个字段的第一个字符的所有记录打印至标准输出。
+awk '$2 ~ /y$/' testfile            #将把字符 y 作为第二个字段的最后一个字符的所有记录打印至标准输出。
+awk '/a..e/' testfile               #将具有以两个字符隔开的字符 a 和 e 的所有记录打印至标准输出。
+awk '/a.*e/' testfile               #将具有以零个或更多字符隔开的字符 a 和 e 的所有记录打印至标准输出。awk '/a.*e/' testfile               #将具有以零个或更多字符隔开的字符 a 和 e 的所有记录打印至标准输出。
