@@ -77,11 +77,11 @@ echo ${var:0-7}
 1.Linux shell 截取字符变量的前8位
 实现方法有如下几种：
     a='helloworld'
-    expr substr “$a” 1 8
-    echo $a|awk ‘{print substr(,1,8)}’
+    expr substr "$a" 1 8
+    echo $a|awk '{print substr(,1,8)}'
     echo $a|cut -c1-8
     echo $
-    expr $a : ‘\(.\\).*’
+    expr $a : '\(.\\).*'
     echo $a|dd bs=1 count=8 2>/dev/null
 
 
