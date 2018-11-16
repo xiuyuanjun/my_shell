@@ -78,7 +78,7 @@ echo ${var:0-7}
 实现方法有如下几种：
     a='helloworld'
     expr substr "$a" 1 8
-    echo $a|awk '{print substr(,1,8)}'
+    echo $a|awk '{print substr($a,1,8)}'
     echo $a|cut -c1-8
     echo $
     expr $a : '\(.\\).*'
