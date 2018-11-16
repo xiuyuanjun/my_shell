@@ -73,3 +73,15 @@ echo ${var:0-7}
 结果是：123.htm
 
 注：（左边的第一个字符是用 0 表示，右边的第一个字符用 0-1 表示）
+
+1.Linux shell 截取字符变量的前8位
+实现方法有如下几种：
+    a='helloworld'
+    expr substr “$a” 1 8
+    echo $a|awk ‘{print substr(,1,8)}’
+    echo $a|cut -c1-8
+    echo $
+    expr $a : ‘\(.\\).*’
+    echo $a|dd bs=1 count=8 2>/dev/null
+
+
