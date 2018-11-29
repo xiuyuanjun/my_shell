@@ -1,10 +1,6 @@
 #!/bin/bash
 
 # Function : 使用except无需输入密码自动登录ssh
-# Author   : Jiangxianli
-# Date     : 2016/01/14
-# Github   : https://github.com/jiangxianli/SSHAutoLogin
-# Update   : Xiongwilee 2018/06/18 https://github.com/xiongwilee/SSHAutoLogin
 
 #默认服务器配置项
 #   "别名            服务器名称                   端口号   IP地址             登录用户名     登录密码/秘钥文件Key 秘钥文件地址"
