@@ -39,3 +39,7 @@ do
     …
 done
 如果你还记得管道的用法，这个结构应该不难理解吧。command命令的输出作为read循环的输入，这种结构长用于处理超过一行的输出，当然awk也很擅长做这种事。
+
+while read line;do echo $line;done < test.txt
+
+cat test.txt | while read line;do echo $line;done
