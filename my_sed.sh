@@ -39,7 +39,7 @@ sed 's#/a#/b#' 将'/a'替换为'/b'
 #删除以数字开头的行
 sed -i '/^[0-9]/d' pexpect_test.py
 
-#行首追加
-sed 's/$/ ABC/' file1
 #行尾追加
+sed 's/$/ ABC/' file1
+#行首追加
 sed 's/^/ ABC/' file1
