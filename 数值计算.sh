@@ -84,3 +84,8 @@ shell中的赋值和操作默认都是字符串处理，在此记下shell中进�
    var=`echo "$var 2"|awk '{printf("%g",sin($1/$2))}'`
    echo $var
    输出结果为1
+   
+   7)使用python等编程语言
+   可以进行任何类型的数值计算
+   var=`python -c "print 2*3009"`
+   echo ${var}
