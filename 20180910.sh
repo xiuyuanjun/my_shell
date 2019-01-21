@@ -20,3 +20,6 @@ echo done!
 << eeooff，ssh后直到遇到eeooff这样的内容结束，eeooff可以随便修改成其他形式。
 重定向目的在于不显示远程的输出了
 在结束前，加exit退出远程节点
+
+当前脚本所在目录:
+DIR=$( cd $( dirname $0 ) && pwd )
