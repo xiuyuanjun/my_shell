@@ -85,3 +85,37 @@ echo ${var:0-7}
     echo $a|dd bs=1 count=8 2>/dev/null
 
 
+Shell判断字符串包含关系的几种方法
+
+方法一：利用grep查找
+strA="long string"
+strB="string"
+result=$(echo $strA | grep "${strB}")
+if [[ "$result" != "" ]]
+then
+    echo "包含"
+else
+    echo "不包含"
+fi
+
+方法二：利用字符串运算符
+
+strA="helloworld"
+strB="low"
+if [[ $strA =~ $strB ]]
+then
+    echo "包含"
+else
+    echo "不包含"
+fi
+
+方法三：利用通配符
+A="helloworld"
+B="low"
+if [[ $A == *$B* ]]
+then
+    echo "包含"
+else
+    echo "不包含"
+fi
+
