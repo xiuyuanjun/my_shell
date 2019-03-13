@@ -6,3 +6,5 @@ find .|xargs grep -ri "要查找的字符串"
 find ./ -name test.txt -delete
 find ./ -name test.txt | xargs rm -f
 find ./ -type f -name txt.txt -delete
+
+find . -name "*.txt" -print0 | xargs -0 rm
